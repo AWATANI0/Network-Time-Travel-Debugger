@@ -156,3 +156,16 @@ Scenario       |      	Command	                           |   Effect
 Router failure |	python tests/scenarios/router_failure.py	| Shuts down an interface
 Route hijack	|  python tests/scenarios/route_change.py	   | Adds/removes static routes
 Traffic flood	|  python tests/scenarios/link_flood.py	   | Saturates a link with ICMP
+
+## 🔒 Security Notes
+SSH credentials should be protected (you can move them to devices.json)
+Avoid using default passwords in production
+
+## 🤝 Contributing
+Pull requests and contributions are welcome! Fork this repo and feel free to suggest improvements, new features, or bug fixes.
+
+## 📜 License
+MIT License – free to use, modify, and distribute.
+
+## 🙌 Author
+Created  by Abdellah TAHIRI
