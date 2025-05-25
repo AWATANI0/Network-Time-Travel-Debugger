@@ -36,23 +36,24 @@ The project combines:
 ## 📁 Project Structure
 
 network-time-travel-debugger/
-├── main_collector.py             # ✅ Script principal qui lance la collecte
+├── main_collector.py           # ✅ Main script that launches the data collection
 │
-├── collector/                    # 📦 Partie "collecte de données"
-│   ├── __init__.py               # Déclare le dossier comme un module Python
-│   ├── data_collector.py         # Contient la logique SSH pour récupérer les infos réseau
-│   ├── database.py               # Initialise et gère la base de données SQLite
-│   └── device_manager.py         # (optionnel) gestion des devices à partir de devices.json
+├── collector/                  # 📦 Data collection module
+│   ├── __init__.py             # Declares the folder as a Python package
+│   ├── data_collector.py       # Contains the SSH logic to collect routing/interface info
+│   ├── database.py             # Initializes and manages the SQLite database
+│   └── device_manager.py       # (Optional) Loads device settings from devices.json
 │
-├── config/                       # ⚙️ Fichiers de configuration
-│   └── devices.json              # Liste des équipements à surveiller (IP, login, type)
+├── config/                     # ⚙️ Configuration files
+│   └── devices.json            # List of monitored devices (IP, username, password, type)
 │
-├── database/                     # 💾 Données persistantes
-│   └── network_history.db        # Base de données SQLite (créée automatiquement)
+├── database/                   # 💾 Persistent data
+│   └── network_history.db      # SQLite database file (auto-generated)
 │
-├── web/                          # 🌐 Interface Web (Flask)
-│   ├── site.html                 # Page principale HTML (équivalent à index.html)
-│   ├── site.css                  # Feuille de style CSS
-│   └── site.js                   # Logique JS pour l'affichage dynamique
+├── web/                        # 🌐 Web interface (Flask)
+│   ├── site.html               # Main HTML page (should be renamed to index.html)
+│   ├── site.css                # CSS stylesheet
+│   └── site.js                 # JavaScript logic for dynamic content
 │
-└── README.md                     # 📘 Présentation du projet pour GitHub (à ajouter)
+└── README.md                   # 📘 Project description for GitHub (to be added)
+
