@@ -35,7 +35,7 @@ The project combines:
 
 ## 📁 Project Structure
 
-network-time-travel-debugger/
+'network-time-travel-debugger/
 ├── main_collector.py           # ✅ Main script that launches the data collection
 │
 ├── collector/                  # 📦 Data collection module
@@ -55,5 +55,5 @@ network-time-travel-debugger/
 │   ├── site.css                # CSS stylesheet
 │   └── site.js                 # JavaScript logic for dynamic content
 │
-└── README.md                   # 📘 Project description for GitHub (to be added)
+└── README.md                   # 📘 Project description for GitHub (to be added)'
 
