@@ -108,7 +108,7 @@ pip install -r requirements.txt
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/network-time-travel-debugger.git
+git clone https://github.com/AWATANI0/Network-Time-Travel-Debugger.git
 cd network-time-travel-debugger
 ```
 
