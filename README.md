@@ -34,6 +34,7 @@ The project combines:
 ---
 
 ## 📁 Project Structure
+
 network-time-travel-debugger/
 ├── main_collector.py             # ✅ Script principal qui lance la collecte
 │
@@ -53,3 +54,5 @@ network-time-travel-debugger/
 │   ├── site.html                 # Page principale HTML (équivalent à index.html)
 │   ├── site.css                  # Feuille de style CSS
 │   └── site.js                   # Logique JS pour l'affichage dynamique
+│
+└── README.md                     # 📘 Présentation du projet pour GitHub (à ajouter)
