@@ -58,3 +58,25 @@ network-time-travel-debugger/
 │
 └── README.md                   # 📘 Project documentation
 
+---
+
+## ⚙️ Requirements
+
+✅ You need more than just Python:
+
+| Tool / Tech        | Purpose                                    |
+|--------------------|--------------------------------------------|
+| 🐍 Python 3.10+     | Run scripts and collect network data       |
+| 📦 pip             | Install Python packages                    |
+| 🧪 GNS3            | Simulate network devices and scenarios     |
+| 💻 Wireshark       | (Optional) Inspect real-time traffic       |
+| 🌐 Web browser     | Access the web interface (http://localhost:5000) |
+
+---
+
+## 📦 Required Python Packages
+
+Install with pip:
+
+```bash
+pip install flask paramiko netmiko scapy pandas matplotlib scikit-learn aiohttp
