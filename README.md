@@ -80,3 +80,61 @@ Install with pip:
 
 ```bash
 pip install flask paramiko netmiko scapy pandas matplotlib scikit-learn aiohttp
+```
+Or use the requirements file:
+
+bash
+```
+pip install -r requirements.txt
+```
+Sample requirements.txt:
+```
+nginx
+Copy
+Edit
+flask
+paramiko
+netmiko
+scapy
+pandas
+matplotlib
+scikit-learn
+aiohttp
+```
+---
+
+##🛠️ Installation Steps
+1. Clone the repository
+bash
+```
+git clone https://github.com/your-username/network-time-travel-debugger.git
+cd network-time-travel-debugger
+```
+
+2. Set up the folders
+Make sure this structure exists:
+bash
+```
+mkdir -p collector database config web/static web/templates
+touch collector/__init__.py
+```
+
+3. Install dependencies
+bash
+```
+pip install -r requirements.txt
+```
+
+4. Run the main collector
+bash
+```
+python main_collector.py
+```
+
+5. Launch the web interface
+In a new terminal:
+bash
+```
+python web/app.py
+```
+Visit http://localhost:5000 in your browser.
