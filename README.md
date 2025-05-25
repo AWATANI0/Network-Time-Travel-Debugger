@@ -119,18 +119,40 @@ Make sure this structure exists:
 mkdir -p collector database config web/static web/templates
 touch collector/__init__.py
 ```
+### 3. Configure Devices
+Edit config/devices.json:
 
+```json
+{  
+  "router1": {  
+    "ip": "192.168.1.1",  
+    "username": "admin",  
+    "password": "admin",  
+    "type": "cisco"  
+  }  
+}  
+```
 
-### 3. Run the main collector
+### 4. Run the main collector
 
 ```bash
 python main_collector.py
 ```
 
-### 4. Launch the web interface
+### 5. Launch the web interface
 In a new terminal:
 
 ```bash
 python web/app.py
 ```
 Visit http://localhost:5000 in your browser.
+
+## 🧪 Test Scenarios
+
+Pre-built scripts to validate detection capabilities:
+
+Scenario       |      	Command	                           |   Effect
+---------------|--------------------------------------------|-----------------------
+Router failure |	python tests/scenarios/router_failure.py	| Shuts down an interface
+Route hijack	|  python tests/scenarios/route_change.py	   | Adds/removes static routes
+Traffic flood	|  python tests/scenarios/link_flood.py	   | Saturates a link with ICMP
