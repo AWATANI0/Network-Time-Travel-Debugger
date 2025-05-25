@@ -147,6 +147,7 @@ python web/app.py
 ```
 Visit http://localhost:5000 in your browser.
 
+---
 ## 🧪 Test Scenarios
 
 Pre-built scripts to validate detection capabilities:
@@ -157,6 +158,7 @@ Router failure |	python tests/scenarios/router_failure.py	| Shuts down an interf
 Route hijack	|  python tests/scenarios/route_change.py	   | Adds/removes static routes
 Traffic flood	|  python tests/scenarios/link_flood.py	   | Saturates a link with ICMP
 
+---
 ## 🔒 Security Notes
 SSH credentials should be protected (you can move them to devices.json)
 Avoid using default passwords in production
