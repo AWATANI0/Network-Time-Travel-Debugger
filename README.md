@@ -120,7 +120,7 @@ mkdir -p collector database config web/static web/templates
 touch collector/__init__.py
 ```
 ### 3. Configure Devices
-Edit config/devices.json:
+Edit `config/devices.json`:
 
 ```json
 {  
