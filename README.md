@@ -34,3 +34,22 @@ The project combines:
 ---
 
 ## 📁 Project Structure
+network-time-travel-debugger/
+├── main_collector.py             # ✅ Script principal qui lance la collecte
+│
+├── collector/                    # 📦 Partie "collecte de données"
+│   ├── __init__.py               # Déclare le dossier comme un module Python
+│   ├── data_collector.py         # Contient la logique SSH pour récupérer les infos réseau
+│   ├── database.py               # Initialise et gère la base de données SQLite
+│   └── device_manager.py         # (optionnel) gestion des devices à partir de devices.json
+│
+├── config/                       # ⚙️ Fichiers de configuration
+│   └── devices.json              # Liste des équipements à surveiller (IP, login, type)
+│
+├── database/                     # 💾 Données persistantes
+│   └── network_history.db        # Base de données SQLite (créée automatiquement)
+│
+├── web/                          # 🌐 Interface Web (Flask)
+│   ├── site.html                 # Page principale HTML (équivalent à index.html)
+│   ├── site.css                  # Feuille de style CSS
+│   └── site.js                   # Logique JS pour l'affichage dynamique
