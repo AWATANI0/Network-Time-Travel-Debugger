@@ -1,9 +1,12 @@
 import sqlite3
 import json
 from datetime import datetime
+import os  
 
 class NetworkDB:
     def __init__(self, db_path='database/network_history.db'):
+        # Créer le répertoire si inexistant
+        os.makedirs(os.path.dirname(db_path), exist_ok=True)
         self.db_path = db_path
         self.init_database()
     
@@ -59,4 +62,3 @@ class NetworkDB:
         
         conn.commit()
         conn.close()
-    
