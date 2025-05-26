@@ -146,7 +146,7 @@ In a new terminal:
 cd Network-Time-Travel-Debugger/web/
 python -m http.server 8000
 ```
-Visit http://localhost:8000 in your browser.
+Visit http://localhost:8000/site.html in your browser.
 
 ---
 ## 🧪 Test Scenarios
