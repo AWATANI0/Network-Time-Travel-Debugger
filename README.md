@@ -70,7 +70,7 @@ network-time-travel-debugger/
 | 📦 pip             | Install Python packages                          |
 | 🧪 GNS3            | Simulate network devices and scenarios           |
 | 💻 Wireshark       | (Optional) Inspect real-time traffic             |
-| 🌐 Web browser     | Access the web interface (http://localhost:5000) |
+| 🌐 Web browser     | Access the web interface                         |
 
 ---
 
