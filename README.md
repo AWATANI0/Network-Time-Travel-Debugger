@@ -143,9 +143,10 @@ python main_collector.py
 In a new terminal:
 
 ```bash
-python web/app.py
+cd Network-Time-Travel-Debugger/web/
+python -m http.server 8000
 ```
-Visit http://localhost:5000 in your browser.
+Visit http://localhost:8000 in your browser.
 
 ---
 ## 🧪 Test Scenarios
