@@ -9,56 +9,66 @@ class NetworkMonitor:
         self.db = NetworkDB()
         self.collector = NetworkCollector(self.db)
         self.running = False
-        self.collection_interval = 30  # 30 secondes
-    
+        self.collection_interval = 30  # Intervalle de collecte en secondes
+
     def start_monitoring(self):
         self.running = True
-        
-        # Thread pour collecte périodique
         collection_thread = threading.Thread(target=self.collection_loop)
         collection_thread.start()
-        
-        print("Monitoring démarré...")
-        print(f"Collecte toutes les {self.collection_interval} secondes")
-    
+        print("✅ Monitoring démarré...")
+        print(f"⏱️ Collecte toutes les {self.collection_interval} secondes.")
+
     def collection_loop(self):
         while self.running:
             try:
-                print(f"[{datetime.now()}] Collecte en cours...")
-                
-                # Collecte pour chaque équipement
+                print(f"[{datetime.now()}] 🔄 Début de la collecte...")
+
                 for device_id in self.collector.devices.keys():
-                    print(f"  - Collecte {device_id}")
-                    
-                    # Table de routage
+                    print(f"  📡 Collecte des données depuis {device_id}")
                     self.collector.collect_routing_table(device_id)
-                    
-                    # Statistiques interfaces
                     self.collector.collect_interface_stats(device_id)
-                
-                # Test de connectivité globale
+
                 self.collector.collect_connectivity()
-                
-                print("  Collecte terminée\n")
-                
+                print("✅ Collecte terminée.\n")
+
             except Exception as e:
-                print(f"Erreur pendant la collecte: {e}")
-            
+                print(f"❌ Erreur pendant la collecte : {e}")
+
             time.sleep(self.collection_interval)
-    
+
     def stop_monitoring(self):
         self.running = False
-        print("Monitoring arrêté")
+        print("🛑 Monitoring arrêté.")
 
+# ---------------------------------------------------------------
+# ✅ Point d'entrée du script principal
+# ---------------------------------------------------------------
 if __name__ == "__main__":
-    monitor = NetworkMonitor()
-    
+    db = NetworkDB()
+    collector = NetworkCollector(db)
+
+    print("📥 Collecte initiale des tables de routage :")
+    for device_id in collector.devices:
+        result = collector.collect_routing_table(device_id)
+        print(f"\n--- 📄 Table de routage pour {device_id} ---")
+        print(result)
+
+    print("\n📥 Collecte initiale des interfaces :")
+    for device_id in collector.devices:
+        result = collector.collect_interface_stats(device_id)
+        print(f"\n--- 📄 Statistiques des interfaces pour {device_id} ---")
+        print(result)
+
+    print("\n🌐 Test de connectivité entre les équipements :")
+    result = collector.collect_connectivity()
+    print(result)
+
     try:
+        monitor = NetworkMonitor()
         monitor.start_monitoring()
-        
-        # Garder le programme actif
+
         while True:
             time.sleep(1)
-            
+
     except KeyboardInterrupt:
         monitor.stop_monitoring()
